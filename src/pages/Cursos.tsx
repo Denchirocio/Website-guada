@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 import imgSakuraBanner from '../assets/Banner sakura 3.png';
 const imgHiragana = "https://www.figma.com/api/mcp/asset/53c5b85d-5e00-40a6-bece-329a72b5d435";
 const imgKatakana = "https://www.figma.com/api/mcp/asset/0dc8a618-8157-43a4-8f5d-6a9fe3c72ea8";
-const imgJLPT     = "https://www.figma.com/api/mcp/asset/a3caff61-7e79-43c0-94d2-be711c8972b1";
+import imgJLPT from '../assets/N5.png';
 
 function ContactDrawer({ onClose }: { onClose: () => void }) {
   const [form, setForm] = useState({ nombre:'', email:'', nivel:'', curso:'', comentarios:'' });
@@ -89,9 +89,8 @@ export default function Cursos() {
       description: 'Descripción del curso un poco más larga por favor',
       tags: ['PRINCIPIANTE'],
       image: (
-        <div style={{ position:'relative', width:153, height:128 }}>
+        <div style={{ width:153, height:128 }}>
           <img src={imgHiragana} alt="Hiragana" style={{ width:'100%', height:'100%', objectFit:'cover' }} />
-          <span style={{ position:'absolute', bottom:0, right:-16, fontFamily:"'Krona One', sans-serif", fontSize:48, color:'#838383', lineHeight:1 }}>A</span>
         </div>
       ),
     },
@@ -100,9 +99,8 @@ export default function Cursos() {
       description: 'Descripción del curso un poco más larga por favor',
       tags: ['PRINCIPIANTE'],
       image: (
-        <div style={{ position:'relative', width:153, height:128 }}>
+        <div style={{ width:153, height:128 }}>
           <img src={imgKatakana} alt="Katakana" style={{ width:'100%', height:'100%', objectFit:'cover' }} />
-          <span style={{ position:'absolute', bottom:0, right:-16, fontFamily:"'Krona One', sans-serif", fontSize:48, color:'#838383', lineHeight:1 }}>A</span>
         </div>
       ),
     },
@@ -138,24 +136,8 @@ export default function Cursos() {
       description: 'Descripción del curso un poco más larga por favor',
       tags: ['N5', 'PRINCIPIANTE'],
       image: (
-        <div style={{ width:'100%', height:128, position:'relative', display:'flex', alignItems:'center', justifyContent:'center' }}>
-          <img src={imgJLPT} alt="JLPT N5" style={{ width:124, height:124, objectFit:'cover' }} />
-          {/* Floating kana */}
-          {[
-            { char:'あ', top:8,  left:41, rot:-25, size:32 },
-            { char:'日', top:38, left:11, rot:17,  size:32 },
-            { char:'む', top:69, left:48, rot:-29, size:24 },
-            { char:'み', top:18, right:20, rot:7, size:32 },
-            { char:'な', top:60, right:8,  rot:7, size:24 },
-            { char:'水', top:76, right:10, rot:-34, size:32 },
-          ].map(({ char, top, left, right, rot, size }) => (
-            <span key={char} style={{
-              position:'absolute', top, left, right,
-              transform:`rotate(${rot}deg)`,
-              fontFamily:"'Noto Sans JP', sans-serif",
-              fontWeight:300, fontSize:size, color:'black', lineHeight:1,
-            }}>{char}</span>
-          ))}
+        <div style={{ width:'100%', height:128, display:'flex', alignItems:'center', justifyContent:'center' }}>
+          <img src={imgJLPT} alt="JLPT N5" style={{ width:'100%', height:'100%', objectFit:'cover' }} />
         </div>
       ),
     },
@@ -182,7 +164,7 @@ export default function Cursos() {
         </div>
 
         {/* Cards grid */}
-        <div style={{ display:'grid', gridTemplateColumns:'repeat(4, 1fr)', gap:20 }}>
+        <div style={{ display:'grid', gridTemplateColumns:'repeat(3, 1fr)', gap:20 }}>
           {courses.map(course => (
             <Card key={course.title} course={course} onHablemos={() => setDrawerOpen(true)} />
           ))}

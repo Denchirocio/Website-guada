@@ -9,7 +9,7 @@ import imgTeacherLocal from '../assets/guada.png';
 const imgTeacher  = imgTeacherLocal;
 const imgHiragana = "https://www.figma.com/api/mcp/asset/ab326742-948f-4552-a1c0-2426f125a3b6";
 const imgKatakana = "https://www.figma.com/api/mcp/asset/72368156-877f-4b02-a206-40ebedaba643";
-const imgJLPT     = "https://www.figma.com/api/mcp/asset/d4cdbf87-c0a8-42c4-bf88-e4b2322e71f6";
+import imgJLPT from '../assets/N5.png';
 import imgBannerLocal from '../assets/bannerrecursos.png';
 const imgBanner   = imgBannerLocal;
 const imgRev1     = "https://www.figma.com/api/mcp/asset/5fad5849-0cff-4843-acec-289ba73a64fc";
