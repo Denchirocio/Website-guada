@@ -28,7 +28,11 @@ export default function Navbar({ active, onHablemos }: { active: Page; onHablemo
               padding: '8px 12px',
               textDecoration: 'none',
               borderBottom: active === page ? '2px solid #1e293b' : 'none',
-            }}>{label}</Link>
+              transition: 'color 0.2s ease',
+            }}
+            onMouseOver={e => { if (active !== page) e.currentTarget.style.color = '#1e293b'; }}
+            onMouseOut={e => { if (active !== page) e.currentTarget.style.color = '#94a3b8'; }}
+            >{label}</Link>
           ))}
           <button onClick={onHablemos} style={{ marginLeft:16, background:'black', color:'white', fontFamily:"'Work Sans', sans-serif", fontWeight:400, fontSize:18, padding:'10px 16px', border:'none', cursor:'pointer' }}
             onMouseOver={e => (e.currentTarget.style.background='#333')}

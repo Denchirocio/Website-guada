@@ -5,22 +5,31 @@ import FadeIn from '../components/FadeIn';
 import ContactDrawer from '../components/ContactDrawer';
 
 import imgBanner from '../assets/bannerrrhh.png';
+import imgTablaHiragana from '../assets/Tabla hiragana.png';
+import imgTablaKatakana from '../assets/Tabla katakana.png';
+import imgGrillas from '../assets/Grillas.png';
+import imgJuegosHiragana from '../assets/tarjetas hiragana.png';
+import imgJuegosKatakana from '../assets/tarjetas katakana.png';
+import imgBraille from '../assets/Brailee.png';
+import imgSenasHiragana from '../assets/Señas hiragana.png';
+import imgSaludosSenas from '../assets/Saludos señas.png';
 
 interface Resource {
   title: string;
   description: string;
   href?: string;
+  image?: string;
 }
 
 const resources: Resource[] = [
-  { title: 'Práctica y juegos de Hiragana',        description: 'Actividades imprimibles para practicar y aprender hiragana de forma divertida.' },
-  { title: 'Práctica y juegos de Katakana',        description: 'Actividades imprimibles para practicar y aprender katakana de forma divertida.' },
-  { title: 'Tabla de Hiragana completa',           description: 'Tabla de referencia con todos los caracteres hiragana y su romanización.',       href: '/hiragana-chart.pdf' },
-  { title: 'Tabla de Katakana completa',           description: 'Tabla de referencia con todos los caracteres katakana y su romanización.',       href: '/katakana-chart.pdf' },
-  { title: 'Hojas de práctica de trazos',          description: 'Plantillas imprimibles para practicar la escritura de cada carácter a tu ritmo.' },
-  { title: 'Hiragana en braille japonés',          description: 'Tabla de correspondencia entre el hiragana y el sistema braille japonés.' },
-  { title: 'Silabario en Lengua de Señas japonesa', description: 'Tabla del silabario japonés representado en Lengua de Señas Japonesa (JSL).' },
-  { title: 'Saludos en Lengua de Señas japonesa',  description: 'Videos para aprender los saludos más comunes en Lengua de Señas Japonesa.' },
+  { title: 'Práctica y juegos de Hiragana',         description: 'Actividades imprimibles para practicar y aprender hiragana de forma divertida.', image: imgJuegosHiragana },
+  { title: 'Práctica y juegos de Katakana',         description: 'Actividades imprimibles para practicar y aprender katakana de forma divertida.', image: imgJuegosKatakana },
+  { title: 'Tabla de Hiragana completa',            description: 'Tabla de referencia con todos los caracteres hiragana y su romanización.',       href: '/hiragana-chart.pdf', image: imgTablaHiragana },
+  { title: 'Tabla de Katakana completa',            description: 'Tabla de referencia con todos los caracteres katakana y su romanización.',       href: '/katakana-chart.pdf', image: imgTablaKatakana },
+  { title: 'Hojas de práctica de trazos',           description: 'Plantillas imprimibles para practicar la escritura de cada carácter a tu ritmo.', image: imgGrillas },
+  { title: 'Hiragana en braille japonés',           description: 'Tabla de correspondencia entre el hiragana y el sistema braille japonés.', image: imgBraille },
+  { title: 'Silabario en Lengua de Señas japonesa', description: 'Tabla del silabario japonés representado en Lengua de Señas Japonesa (JSL).', image: imgSenasHiragana },
+  { title: 'Saludos en Lengua de Señas japonesa',  description: 'Videos para aprender los saludos más comunes en Lengua de Señas Japonesa.', image: imgSaludosSenas },
 ];
 
 function ResourceCard({ resource }: { resource: Resource }) {
@@ -36,8 +45,10 @@ function ResourceCard({ resource }: { resource: Resource }) {
         boxShadow: hovered ? '0 8px 24px rgba(0,0,0,0.10)' : '0 0 0 rgba(0,0,0,0)',
         transition: 'transform 0.25s ease, box-shadow 0.25s ease',
       }}>
-      {/* Image placeholder */}
-      <div style={{ width: '100%', height: 128, background: '#f0f0f0', borderRadius: 4 }} />
+      {/* Image */}
+      <div style={{ width: '100%', height: 128, borderRadius: 4, overflow: 'hidden', background: '#f0f0f0' }}>
+        {resource.image && <img src={resource.image} alt={resource.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />}
+      </div>
 
       {/* Info */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: 16, flex: 1 }}>
