@@ -5,10 +5,10 @@ import Footer from '../components/Footer';
 import ContactDrawer from '../components/ContactDrawer';
 import imgBanner from '../assets/banner cursos.png';
 
-const imgCurso   = "https://www.figma.com/api/mcp/asset/a0e92ac4-7136-49b5-9ead-715c439e96e4";
-const imgAvatar1 = "https://www.figma.com/api/mcp/asset/61b2e8d4-4cb8-4ae0-8a22-9460b39f9258";
-const imgAvatar2 = "https://www.figma.com/api/mcp/asset/a8fe66a0-f6a4-4ff2-8c39-e4d8e14f5e82";
-const imgAvatar3 = "https://www.figma.com/api/mcp/asset/3caf827b-d788-4e85-b950-8557e69d34e7";
+const imgCurso   = "https://www.figma.com/api/mcp/asset/eb1dd071-240f-4226-91f2-1ae4fc1898fd";
+const imgAvatar1 = "https://www.figma.com/api/mcp/asset/8ea1be07-5c0c-4816-9561-a84a63ba6637";
+const imgAvatar2 = "https://www.figma.com/api/mcp/asset/96ceb9f1-6974-4211-85a5-03cca4b950fe";
+const imgAvatar3 = "https://www.figma.com/api/mcp/asset/58649074-46ea-4406-9d18-21db7040efab";
 
 function Tag({ label }: { label: string }) {
   return (
@@ -18,24 +18,27 @@ function Tag({ label }: { label: string }) {
   );
 }
 
-export default function CursoHiragana() {
+export default function CursoParticulares() {
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const cursoNombre = 'Aprende Hiragana';
+  const cursoNombre = 'Clases Particulares';
 
   const incluye = [
-    'Introducción al japonés y al sistema de escritura',
-    'Aprendizaje completo de los caracteres Hiragana',
-    'Guías de trazos y práctica de escritura',
-    'Lectura de palabras y frases simples',
+    'Clases 100% personalizadas según tu nivel',
+    'Introducción al japonés y sus sistemas de escritura',
+    'Hiragana, Katakana y bases de Kanji',
+    'Gramática y vocabulario básico',
+    'Conversación y pronunciación',
     'Ejercicios prácticos y material descargable',
-    'Recursos gratuitos para seguir practicando',
+    'Seguimiento personalizado y acompañamiento',
+    'Recursos gratuitos para practicar entre clases',
   ];
 
   const idealPara = [
-    'Personas que quieren comenzar japonés desde cero',
-    'Fans del anime, manga o la cultura japonesa',
+    'Personas que quieren empezar japonés desde cero',
+    'Fans del anime, manga y la cultura japonesa',
     'Estudiantes autodidactas',
     'Quienes quieren avanzar en gramática y conversación.',
+    'Personas que quieren prepararse para rendir JLPT N5',
   ];
 
   return (
@@ -70,15 +73,15 @@ export default function CursoHiragana() {
               </div>
               <div style={{ display:'flex', gap:6 }}>
                 <Tag label="PRINCIPIANTE" />
-                <Tag label="4 HS" />
-                <Tag label="ASINCRONICO" />
+                <Tag label="PERSONALIZADO" />
+                <Tag label="ONLINE" />
               </div>
             </div>
 
             <div style={{ fontFamily:"'Work Sans', sans-serif", fontWeight:400, fontSize:16, color:'black', lineHeight:'26px', display:'flex', flexDirection:'column', gap:16 }}>
-              <p>¿Te gustaría empezar a aprender japonés desde cero pero no sabés por dónde comenzar?</p>
-              <p>Este curso de Hiragana está pensado para principiantes que quieren dar sus primeros pasos de forma simple, clara y sin sentirse abrumados.</p>
-              <p>Aprenderás los 46 caracteres hiragana, su pronunciación y cómo leer y escribir tus primeras palabras y frases en japonés desde las primeras clases.</p>
+              <p>¿Te gustaría aprender japonés desde cero pero no sabés por dónde empezar?</p>
+              <p>Estas clases particulares están pensadas para acompañarte de forma personalizada, simple y sin presión, adaptándose a tu ritmo y objetivos.</p>
+              <p>Vas a aprender lectura, escritura, vocabulario y conversación desde las primeras clases, construyendo una base sólida del idioma de manera práctica y dinámica.</p>
             </div>
 
             <div style={{ display:'flex', alignItems:'center', gap:25 }}>
@@ -105,8 +108,19 @@ export default function CursoHiragana() {
           </div>
 
           {/* Imagen del curso */}
-          <div style={{ flexShrink:0, border:'1px solid #d0cccc', borderRadius:32, padding:10, width:418, height:355, overflow:'hidden' }}>
-            <img src={imgCurso} alt="Hiragana" style={{ width:'100%', height:'100%', objectFit:'cover', borderRadius:24 }} />
+          <div style={{ flexShrink:0, border:'1px solid #d0cccc', borderRadius:32, padding:10, width:418, height:355, overflow:'hidden', position:'relative' }}>
+            <img src={imgCurso} alt="Clases particulares" style={{ width:'100%', height:'100%', objectFit:'cover', borderRadius:24 }} />
+            {/* Sticker 日本語 ❤️ */}
+            <div style={{
+              position:'absolute', top:34, right:20,
+              transform:'rotate(20deg)',
+              background:'white', border:'1.4px solid #959595',
+              padding:'4px 12px', borderRadius:6,
+              fontFamily:"'Noto Sans JP', sans-serif", fontSize:24, color:'black',
+              whiteSpace:'nowrap',
+            }}>
+              日本語 ❤️
+            </div>
           </div>
         </div>
 
@@ -119,7 +133,7 @@ export default function CursoHiragana() {
             <h2 style={{ fontFamily:"'Krona One', sans-serif", fontSize:24, letterSpacing:'4.8px', color:'black', margin:0 }}>INCLUYE</h2>
             <ul style={{ display:'flex', flexDirection:'column', gap:16, paddingLeft:24, margin:0 }}>
               {incluye.map((item, i) => (
-                <li key={i} style={{ fontFamily:"'Work Sans', sans-serif", fontWeight:400, fontSize:16, color:'black', letterSpacing:'0.64px', lineHeight:'normal' }}>
+                <li key={i} style={{ fontFamily:"'Work Sans', sans-serif", fontWeight:400, fontSize:16, color:'black', letterSpacing:'0.64px' }}>
                   {item}
                 </li>
               ))}
@@ -129,7 +143,7 @@ export default function CursoHiragana() {
             <h2 style={{ fontFamily:"'Krona One', sans-serif", fontSize:24, letterSpacing:'4.8px', color:'black', margin:0 }}>IDEAL PARA</h2>
             <ul style={{ display:'flex', flexDirection:'column', gap:16, paddingLeft:24, margin:0 }}>
               {idealPara.map((item, i) => (
-                <li key={i} style={{ fontFamily:"'Work Sans', sans-serif", fontWeight:400, fontSize:16, color:'black', letterSpacing:'0.64px', lineHeight:'normal' }}>
+                <li key={i} style={{ fontFamily:"'Work Sans', sans-serif", fontWeight:400, fontSize:16, color:'black', letterSpacing:'0.64px' }}>
                   {item}
                 </li>
               ))}

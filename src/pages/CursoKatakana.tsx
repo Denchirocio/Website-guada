@@ -5,10 +5,10 @@ import Footer from '../components/Footer';
 import ContactDrawer from '../components/ContactDrawer';
 import imgBanner from '../assets/banner cursos.png';
 
-const imgCurso   = "https://www.figma.com/api/mcp/asset/a0e92ac4-7136-49b5-9ead-715c439e96e4";
-const imgAvatar1 = "https://www.figma.com/api/mcp/asset/61b2e8d4-4cb8-4ae0-8a22-9460b39f9258";
-const imgAvatar2 = "https://www.figma.com/api/mcp/asset/a8fe66a0-f6a4-4ff2-8c39-e4d8e14f5e82";
-const imgAvatar3 = "https://www.figma.com/api/mcp/asset/3caf827b-d788-4e85-b950-8557e69d34e7";
+const imgCurso   = "https://www.figma.com/api/mcp/asset/df8660ca-4bf5-4466-bc06-e7e653f411e6";
+const imgAvatar1 = "https://www.figma.com/api/mcp/asset/d7acae28-d696-4114-b1b3-65766dfdcb38";
+const imgAvatar2 = "https://www.figma.com/api/mcp/asset/e154fe0d-4067-43d8-9665-9eabe44fd0f8";
+const imgAvatar3 = "https://www.figma.com/api/mcp/asset/259967c3-22e8-43b9-9a2e-39db1a748f50";
 
 function Tag({ label }: { label: string }) {
   return (
@@ -18,13 +18,13 @@ function Tag({ label }: { label: string }) {
   );
 }
 
-export default function CursoHiragana() {
+export default function CursoKatakana() {
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const cursoNombre = 'Aprende Hiragana';
+  const cursoNombre = 'Aprende Katakana';
 
   const incluye = [
     'Introducción al japonés y al sistema de escritura',
-    'Aprendizaje completo de los caracteres Hiragana',
+    'Aprendizaje completo de los caracteres Katakana',
     'Guías de trazos y práctica de escritura',
     'Lectura de palabras y frases simples',
     'Ejercicios prácticos y material descargable',
@@ -77,8 +77,8 @@ export default function CursoHiragana() {
 
             <div style={{ fontFamily:"'Work Sans', sans-serif", fontWeight:400, fontSize:16, color:'black', lineHeight:'26px', display:'flex', flexDirection:'column', gap:16 }}>
               <p>¿Te gustaría empezar a aprender japonés desde cero pero no sabés por dónde comenzar?</p>
-              <p>Este curso de Hiragana está pensado para principiantes que quieren dar sus primeros pasos de forma simple, clara y sin sentirse abrumados.</p>
-              <p>Aprenderás los 46 caracteres hiragana, su pronunciación y cómo leer y escribir tus primeras palabras y frases en japonés desde las primeras clases.</p>
+              <p>Este curso de Katakana está pensado para principiantes que quieren dar sus primeros pasos de forma simple, clara y sin sentirse abrumados.</p>
+              <p>Aprenderás los 46 caracteres katakana, su pronunciación y cómo leer y escribir tus primeras palabras y expresiones en japonés desde las primeras clases.</p>
             </div>
 
             <div style={{ display:'flex', alignItems:'center', gap:25 }}>
@@ -106,7 +106,7 @@ export default function CursoHiragana() {
 
           {/* Imagen del curso */}
           <div style={{ flexShrink:0, border:'1px solid #d0cccc', borderRadius:32, padding:10, width:418, height:355, overflow:'hidden' }}>
-            <img src={imgCurso} alt="Hiragana" style={{ width:'100%', height:'100%', objectFit:'cover', borderRadius:24 }} />
+            <img src={imgCurso} alt="Katakana" style={{ width:'100%', height:'100%', objectFit:'cover', borderRadius:24 }} />
           </div>
         </div>
 

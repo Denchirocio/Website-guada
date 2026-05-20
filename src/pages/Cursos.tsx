@@ -85,6 +85,7 @@ export default function Cursos() {
       title: 'Katakana',
       description: 'Descripción del curso un poco más larga por favor',
       tags: ['PRINCIPIANTE'],
+      href: '/cursos/katakana',
       image: (
         <div style={{ width:153, height:128 }}>
           <img src={imgKatakana} alt="Katakana" style={{ width:'100%', height:'100%', objectFit:'cover' }} />
@@ -95,6 +96,7 @@ export default function Cursos() {
       title: 'Clases particulares',
       description: 'Descripción del curso un poco más larga por favor',
       tags: ['N5 - N3'],
+      href: '/cursos/particulares',
       image: (
         <div style={{ width:'100%', height:128, background:'#f3f3f3', borderRadius:4, position:'relative', display:'flex', flexDirection:'column', justifyContent:'center', gap:10, padding:'12px 16px' }}>
           {/* Bubble A */}
