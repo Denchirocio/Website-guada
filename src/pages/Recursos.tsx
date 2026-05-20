@@ -13,14 +13,14 @@ interface Resource {
 }
 
 const resources: Resource[] = [
-  { title: 'Guía de Hiragana',  description: 'Aprendé el alfabeto básico japonés desde cero con una guía visual simple.',  href: '/hiragana-chart.pdf' },
-  { title: 'Guía de Katakana',  description: 'Una introducción práctica al katakana, y su sistema de escritura.',           href: '/katakana-chart.pdf' },
-  { title: 'Hojas para trazos',     description: 'Plantillas imprimibles para practicar escritura japonesa a tu ritmo.' },
-  { title: 'Hojas para trazos',     description: 'Plantillas imprimibles para practicar escritura japonesa a tu ritmo.' },
-  { title: 'Guía de Hiragana',  description: 'Aprendé el alfabeto básico japonés desde cero con una guía visual simple.',  href: '/hiragana-chart.pdf' },
-  { title: 'Guía de Katakana',  description: 'Una introducción práctica al katakana, y su sistema de escritura.',           href: '/katakana-chart.pdf' },
-  { title: 'Hojas para trazos',     description: 'Plantillas imprimibles para practicar escritura japonesa a tu ritmo.' },
-  { title: 'Hojas para trazos',     description: 'Plantillas imprimibles para practicar escritura japonesa a tu ritmo.' },
+  { title: 'Práctica y juegos de Hiragana',        description: 'Actividades imprimibles para practicar y aprender hiragana de forma divertida.' },
+  { title: 'Práctica y juegos de Katakana',        description: 'Actividades imprimibles para practicar y aprender katakana de forma divertida.' },
+  { title: 'Tabla de Hiragana completa',           description: 'Tabla de referencia con todos los caracteres hiragana y su romanización.',       href: '/hiragana-chart.pdf' },
+  { title: 'Tabla de Katakana completa',           description: 'Tabla de referencia con todos los caracteres katakana y su romanización.',       href: '/katakana-chart.pdf' },
+  { title: 'Hojas de práctica de trazos',          description: 'Plantillas imprimibles para practicar la escritura de cada carácter a tu ritmo.' },
+  { title: 'Hiragana en braille japonés',          description: 'Tabla de correspondencia entre el hiragana y el sistema braille japonés.' },
+  { title: 'Silabario en Lengua de Señas japonesa', description: 'Tabla del silabario japonés representado en Lengua de Señas Japonesa (JSL).' },
+  { title: 'Saludos en Lengua de Señas japonesa',  description: 'Videos para aprender los saludos más comunes en Lengua de Señas Japonesa.' },
 ];
 
 function ResourceCard({ resource }: { resource: Resource }) {
@@ -86,14 +86,10 @@ export default function Recursos() {
           <span style={{ fontFamily: "'Work Sans', sans-serif", fontWeight: 400, fontSize: 16, color: 'black', letterSpacing: '0.64px' }}>Acercando el japonés a tu día a día.</span>
         </div>
 
-        {/* Cards — 2 rows of 4 */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-          {[resources.slice(0, 4), resources.slice(4, 8)].map((row, ri) => (
-            <div key={ri} style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20 }}>
-              {row.map((resource, i) => (
-                <ResourceCard key={`${ri}-${i}`} resource={resource} />
-              ))}
-            </div>
+        {/* Cards — 3 por fila */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
+          {resources.map((resource, i) => (
+            <ResourceCard key={i} resource={resource} />
           ))}
         </div>
       </section>
