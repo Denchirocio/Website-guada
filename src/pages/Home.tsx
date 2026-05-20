@@ -229,8 +229,8 @@ const section: React.CSSProperties = { maxWidth:1100, margin:'0 auto', width:'10
             <span style={{ fontFamily:"'Inter', sans-serif", fontWeight:400, fontSize:15, color:'black' }}>aprende japonés.</span>
           </div>
           <div style={{ display:'flex', gap:37, alignItems:'flex-start', justifyContent:'center', flexWrap:'wrap' }}>
-            <CourseCard img={imgHiragana} title="Hiragana"       desc="Descripción del curso un poco más larga por favor" tags={["PRINCIPIANTE"]} extra="A" href="/cursos/hiragana" />
-            <CourseCard img={imgKatakana} title="Katakana"       desc="Descripción del curso un poco más larga por favor" tags={["PRINCIPIANTE"]} extra="A" />
+            <CourseCard img={imgHiragana} title="Hiragana"       desc="Descripción del curso un poco más larga por favor" tags={["PRINCIPIANTE"]} href="/cursos/hiragana" />
+            <CourseCard img={imgKatakana} title="Katakana"       desc="Descripción del curso un poco más larga por favor" tags={["PRINCIPIANTE"]} />
             <CourseCard img={imgJLPT}     title="Examen JLPT N5" desc="Descripción del curso un poco más larga por favor" tags={["N5","PRINCIPIANTE"]} />
           </div>
           <Link to="/cursos" style={{ fontFamily:"'Work Sans', sans-serif", fontWeight:400, fontSize:18, color:'black', textAlign:'center', textDecoration:'none', display:'block' }}

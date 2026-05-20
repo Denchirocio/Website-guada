@@ -30,27 +30,14 @@ body {
 /* ── Sobre mí responsive ── */
 .sobre-mi-layout {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  align-items: stretch;
+  justify-content: center;
   gap: 60px;
-}
-
-.sobre-mi-photo {
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
 }
 
 @media (max-width: 768px) {
   .sobre-mi-layout {
     flex-direction: column;
     gap: 40px;
-  }
-  .sobre-mi-photo {
-    flex-shrink: unset;
-    width: 100%;
-    align-items: center;
   }
 }
