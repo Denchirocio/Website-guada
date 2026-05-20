@@ -193,27 +193,36 @@ const section: React.CSSProperties = { maxWidth:1100, margin:'0 auto', width:'10
       <section style={{ padding:'80px 0' }}>
         <div style={section}>
           <div style={{ display:'flex', flexDirection:'column', gap:40 }}>
+            {/* Título */}
             <div style={{ display:'flex', alignItems:'center', gap:8 }}>
-              <span style={{ fontFamily:"'Krona One', sans-serif", fontSize:18, letterSpacing:3, color:'black' }}>TE DOY LA BIENVENIDA</span>
-              <span style={{ color:'#aaa', margin:'0 4px' }}>|</span>
-              <span style={{ fontFamily:"'Work Sans', sans-serif", fontWeight:400, fontSize:15, color:'black' }}>Conocé el mundo del japonés.</span>
+              <span style={{ fontFamily:"'Krona One', sans-serif", fontSize:24, letterSpacing:'4.8px', color:'black' }}>TE DOY LA BIENVENIDA</span>
+              <span style={{ fontFamily:"'Inter', sans-serif", fontWeight:400, fontSize:16, color:'black' }}>|</span>
+              <span style={{ fontFamily:"'Work Sans', sans-serif", fontWeight:400, fontSize:16, color:'black', letterSpacing:'0.64px' }}>Conocé el mundo del japonés.</span>
             </div>
-            <div style={{ display:'flex', alignItems:'flex-start', justifyContent:'space-between', gap:40 }}>
-              <div style={{ display:'flex', flexDirection:'column', gap:24, maxWidth:560 }}>
-                <div style={{ display:'flex', flexDirection:'column', gap:16, fontFamily:"'Inter', sans-serif", fontWeight:300, fontSize:16, color:'black', lineHeight:'28px' }}>
+            {/* Contenido */}
+            <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', width:'100%' }}>
+              {/* Left — texto + botón */}
+              <div style={{ flexShrink:0, width:600, display:'flex', flexDirection:'column', gap:24 }}>
+                <div style={{ height:309, fontFamily:"'Inter', sans-serif", fontWeight:300, fontSize:16, color:'black', lineHeight:'28px', overflow:'hidden' }}>
                   <p>People close to me have noticed that sometimes I go completely still — like I've entered another level.</p>
+                  <br />
                   <p>That's usually when I'm designing interfaces in my head, replaying user flows, or thinking about how to make digital experiences feel more human.</p>
+                  <br />
                   <p>Influenced by anime and video games, I approach design as an experience that should guide, challenge, and reward the user.</p>
+                  <br />
                   <p>This site is an open portal to that world.</p>
                 </div>
-                <button style={{ background:'black', color:'white', fontFamily:"'Work Sans', sans-serif", fontWeight:400, fontSize:18, padding:'10px 16px', border:'none', cursor:'pointer', width:'fit-content' }}
+                <button onClick={openDrawer}
+                  style={{ background:'black', color:'white', fontFamily:"'Work Sans', sans-serif", fontWeight:400, fontSize:20, padding:'10px 16px', border:'none', cursor:'pointer', width:'fit-content' }}
                   onMouseOver={e => (e.currentTarget.style.background='#333')}
-                  onClick={openDrawer} onMouseOut={e => (e.currentTarget.style.background='black')}>
+                  onMouseOut={e => (e.currentTarget.style.background='black')}>
                   Aprendamos juntos!
                 </button>
               </div>
-              <div style={{ flexShrink:0, width:330, height:420, border:'1px solid #404040', borderTopLeftRadius:200, borderTopRightRadius:200, overflow:'hidden' }}>
-                <img src={imgTeacher} alt="Profesora" style={{ width:'100%', height:'100%', objectFit:'cover' }} />
+              {/* Right — arco (borde) + foto superpuesta */}
+              <div style={{ position:'relative', width:363, height:500, flexShrink:0 }}>
+                <div style={{ position:'absolute', top:0, left:0, right:0, height:428, border:'1px solid #404040', borderTopLeftRadius:200, borderTopRightRadius:200, zIndex:2, pointerEvents:'none' }} />
+                <img src={imgTeacher} alt="Guada Sensei" style={{ position:'absolute', top:0, left:'50%', transform:'translateX(-50%)', height:'100%', width:'auto', objectFit:'cover', objectPosition:'top center', zIndex:1 }} />
               </div>
             </div>
           </div>

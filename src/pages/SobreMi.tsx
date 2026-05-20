@@ -67,57 +67,33 @@ export default function SobreMi() {
         <img src={imgBanner} alt="" style={{ width:'100%', height:'100%', objectFit:'cover' }} />
       </div>
 
-      {/* ─── Te doy la bienvenida ─── */}
-      <section style={{ maxWidth:1100, margin:'0 auto', width:'100%', padding:'80px 20px', display:'flex', flexDirection:'column', gap:40 }}>
+      {/* ─── Soy Guada ─── */}
+      <section style={{ maxWidth:1100, margin:'0 auto', width:'100%', padding:'80px 20px' }}>
+        <div className="sobre-mi-layout">
 
-        {/* Título */}
-        <div style={{ display:'flex', alignItems:'center', gap:8 }}>
-          <span style={{ fontFamily:"'Krona One', sans-serif", fontSize:24, letterSpacing:'4.8px', color:'black' }}>TE DOY LA BIENVENIDA</span>
-          <span style={{ fontFamily:"'Inter', sans-serif", fontWeight:400, fontSize:16, color:'black' }}>|</span>
-          <span style={{ fontFamily:"'Work Sans', sans-serif", fontWeight:400, fontSize:16, color:'black', letterSpacing:'0.64px' }}>Conocé el mundo del japonés.</span>
-        </div>
+          {/* Left — foto */}
+          <div className="sobre-mi-photo">
+            <img src={imgGuada} alt="Guada Sensei" style={{ width:'min(460px, 100%)', objectFit:'cover', display:'block' }} />
+          </div>
 
-        {/* Contenido: texto izq + foto der */}
-        <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', width:'100%' }}>
-
-          {/* Left — texto + botón */}
-          <div style={{ flexShrink:0, width:600, display:'flex', flexDirection:'column', gap:24 }}>
-            {/* Texto con altura fija 309px igual que Figma */}
-            <div style={{ height:309, fontFamily:"'Inter', sans-serif", fontWeight:300, fontSize:16, color:'black', lineHeight:'28px', overflow:'hidden' }}>
+          {/* Right — bio */}
+          <div style={{ flex:1, display:'flex', flexDirection:'column', gap:24 }}>
+            <h1 style={{ fontFamily:"'Krona One', sans-serif", fontSize:36, letterSpacing:6, color:'black', textTransform:'uppercase', lineHeight:1.2 }}>
+              Hola, soy Guada
+            </h1>
+            <div style={{ display:'flex', flexDirection:'column', gap:16, fontFamily:"'Work Sans', sans-serif", fontWeight:400, fontSize:16, color:'#333', lineHeight:'28px' }}>
               <p>People close to me have noticed that sometimes I go completely still — like I've entered another level.</p>
-              <br />
               <p>That's usually when I'm designing interfaces in my head, replaying user flows, or thinking about how to make digital experiences feel more human.</p>
-              <br />
               <p>Influenced by anime and video games, I approach design as an experience that should guide, challenge, and reward the user.</p>
-              <br />
               <p>This site is an open portal to that world.</p>
             </div>
             <button onClick={() => setDrawerOpen(true)}
-              style={{ background:'black', color:'white', fontFamily:"'Work Sans', sans-serif", fontSize:20, padding:'10px 16px', border:'none', cursor:'pointer', width:'fit-content' }}
+              style={{ background:'black', color:'white', fontFamily:"'Work Sans', sans-serif", fontSize:18, padding:'14px 24px', border:'none', cursor:'pointer', width:'fit-content' }}
               onMouseOver={e => (e.currentTarget.style.background='#333')}
               onMouseOut={e => (e.currentTarget.style.background='black')}>
               Aprendamos juntos!
             </button>
           </div>
-
-          {/* Right — arco (borde) + foto superpuesta */}
-          <div style={{ position:'relative', width:363, height:500, flexShrink:0 }}>
-            {/* Borde del arco encima de la foto */}
-            <div style={{
-              position:'absolute', top:0, left:0, right:0, height:428,
-              border:'1px solid #404040',
-              borderTopLeftRadius:200, borderTopRightRadius:200,
-              zIndex:2, pointerEvents:'none',
-            }} />
-            {/* Foto detrás del arco, se extiende más abajo */}
-            <img src={imgGuada} alt="Guada Sensei" style={{
-              position:'absolute', top:0, left:'50%', transform:'translateX(-50%)',
-              height:'100%', width:'auto',
-              objectFit:'cover', objectPosition:'top center',
-              zIndex:1,
-            }} />
-          </div>
-
         </div>
       </section>
 
