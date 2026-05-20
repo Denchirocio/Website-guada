@@ -63,8 +63,8 @@ export default function SobreMi() {
       <Navbar active="sobre-mi" onHablemos={() => setDrawerOpen(true)} />
 
       {/* ─── Hero sakura azul ─── */}
-      <div style={{ width:'100%', height:300, overflow:'hidden', borderBottom:'2px solid #d4d4d4' }}>
-        <img src={imgBanner} alt="" style={{ width:'100%', height:'100%', objectFit:'cover' }} />
+      <div style={{ width:'100%', borderBottom:'2px solid #d4d4d4' }}>
+        <img src={imgBanner} alt="" style={{ width:'100%', display:'block' }} />
       </div>
 
       {/* ─── Soy Guada ─── */}
