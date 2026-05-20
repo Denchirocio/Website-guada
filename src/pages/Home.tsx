@@ -36,6 +36,14 @@ function ContactDrawer({ onClose }: { onClose: () => void }) {
           style={{...base, display:'block'}} />;
   };
 
+  const base: React.CSSProperties = {
+    width:'100%', border:'1px solid #d4d4d4', padding:'14px 16px',
+    fontFamily:"'Work Sans', sans-serif", fontSize:15, color:'#333',
+    outline:'none', background:'white', boxSizing:'border-box', appearance:'none' as const,
+  };
+  const niveles = ['Principiante (sin experiencia)', 'N5 — Básico', 'N4 — Elemental', 'N3 — Intermedio', 'N2 — Avanzado', 'N1 — Experto'];
+  const cursos  = ['Hiragana', 'Katakana', 'Clases particulares', 'Examen JLPT N5'];
+
   return (
     <>
       {/* Backdrop */}
@@ -56,8 +64,25 @@ function ContactDrawer({ onClose }: { onClose: () => void }) {
         <div style={{ flex:1, overflowY:'auto', padding:'0 40px', display:'flex', flexDirection:'column', gap:12 }}>
           {field('Nombre & apellido*', 'nombre')}
           {field('E-mail*', 'email')}
-          {field('Cuál es tu nivel de japonés?', 'nivel')}
-          {field('En que curso estás interesado?', 'curso')}
+          {/* Nivel de japonés */}
+          <div style={{ position:'relative' }}>
+            <select value={form.nivel} onChange={e => setForm({...form, nivel: e.target.value})}
+              style={{...base, display:'block', cursor:'pointer', color: form.nivel ? '#333' : '#aaa', appearance:'none' as const}}>
+              <option value="" disabled>Cuál es tu nivel de japonés?</option>
+              {niveles.map(n => <option key={n} value={n}>{n}</option>)}
+            </select>
+            <span style={{ position:'absolute', right:16, top:'50%', transform:'translateY(-50%)', pointerEvents:'none', color:'#aaa' }}>▾</span>
+          </div>
+
+          {/* Curso */}
+          <div style={{ position:'relative' }}>
+            <select value={form.curso} onChange={e => setForm({...form, curso: e.target.value})}
+              style={{...base, display:'block', cursor:'pointer', color: form.curso ? '#333' : '#aaa', appearance:'none' as const}}>
+              <option value="" disabled>En que curso estás interesado?</option>
+              {cursos.map(c => <option key={c} value={c}>{c}</option>)}
+            </select>
+            <span style={{ position:'absolute', right:16, top:'50%', transform:'translateY(-50%)', pointerEvents:'none', color:'#aaa' }}>▾</span>
+          </div>
           {field('Comentarios', 'comentarios', 'textarea')}
         </div>
 
@@ -87,8 +112,8 @@ function Stars({ n }: { n: number }) {
   );
 }
 
-function CourseCard({ img, title, desc, tags, extra }: {
-  img: string; title: string; desc: string; tags: string[]; extra?: string;
+function CourseCard({ img, title, desc, tags, extra, href }: {
+  img: string; title: string; desc: string; tags: string[]; extra?: string; href?: string;
 }) {
   return (
     <div style={{ background:'white', border:'1px solid #d4d4d4', borderRadius:6, padding:16, display:'flex', flexDirection:'column', gap:16, width:320, transition:'transform 0.25s ease, box-shadow 0.25s ease', cursor:'default' }}
@@ -108,11 +133,19 @@ function CourseCard({ img, title, desc, tags, extra }: {
           ))}
         </div>
       </div>
-      <button style={{ background:'black', color:'white', fontFamily:"'Work Sans', sans-serif", fontSize:15, padding:'10px 0', width:'100%', border:'none', cursor:'pointer', marginTop:'auto' }}
-        onMouseOver={e => (e.currentTarget.style.background='#333')}
-        onMouseOut={e => (e.currentTarget.style.background='black')}>
-        Ver detalle
-      </button>
+      {href ? (
+        <Link to={href} style={{ display:'block', background:'black', color:'white', fontFamily:"'Work Sans', sans-serif", fontSize:15, padding:'10px 0', width:'100%', textAlign:'center', textDecoration:'none', marginTop:'auto', boxSizing:'border-box' }}
+          onMouseOver={e => (e.currentTarget.style.background='#333')}
+          onMouseOut={e => (e.currentTarget.style.background='black')}>
+          Ver detalle
+        </Link>
+      ) : (
+        <button style={{ background:'black', color:'white', fontFamily:"'Work Sans', sans-serif", fontSize:15, padding:'10px 0', width:'100%', border:'none', cursor:'pointer', marginTop:'auto' }}
+          onMouseOver={e => (e.currentTarget.style.background='#333')}
+          onMouseOut={e => (e.currentTarget.style.background='black')}>
+          Ver detalle
+        </button>
+      )}
     </div>
   );
 }
@@ -196,7 +229,7 @@ const section: React.CSSProperties = { maxWidth:1100, margin:'0 auto', width:'10
             <span style={{ fontFamily:"'Inter', sans-serif", fontWeight:400, fontSize:15, color:'black' }}>aprende japonés.</span>
           </div>
           <div style={{ display:'flex', gap:37, alignItems:'flex-start', justifyContent:'center', flexWrap:'wrap' }}>
-            <CourseCard img={imgHiragana} title="Hiragana"       desc="Descripción del curso un poco más larga por favor" tags={["PRINCIPIANTE"]} extra="A" />
+            <CourseCard img={imgHiragana} title="Hiragana"       desc="Descripción del curso un poco más larga por favor" tags={["PRINCIPIANTE"]} extra="A" href="/cursos/hiragana" />
             <CourseCard img={imgKatakana} title="Katakana"       desc="Descripción del curso un poco más larga por favor" tags={["PRINCIPIANTE"]} extra="A" />
             <CourseCard img={imgJLPT}     title="Examen JLPT N5" desc="Descripción del curso un poco más larga por favor" tags={["N5","PRINCIPIANTE"]} />
           </div>

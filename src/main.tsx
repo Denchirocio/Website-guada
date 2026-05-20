@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import SobreMi from './pages/SobreMi'
 import Cursos from './pages/Cursos'
 import Recursos from './pages/Recursos'
+import CursoHiragana from './pages/CursoHiragana'
 
 function RootLayout() {
   const { pathname } = useLocation();
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
       { path: '/sobre-mi', element: <SobreMi /> },
       { path: '/cursos', element: <Cursos /> },
       { path: '/recursos', element: <Recursos /> },
+      { path: '/cursos/hiragana', element: <CursoHiragana /> },
     ],
   },
 ])
