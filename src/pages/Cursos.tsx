@@ -77,8 +77,8 @@ export default function Cursos() {
       tags: ['PRINCIPIANTE'],
       href: '/cursos/hiragana',
       image: (
-        <div style={{ width:153, height:128 }}>
-          <img src={imgHiragana} alt="Hiragana" style={{ width:'100%', height:'100%', objectFit:'cover' }} />
+        <div style={{ display:'flex', alignItems:'center', justifyContent:'center', height:128, overflow:'hidden', width:'100%' }}>
+          <img src={imgHiragana} alt="Hiragana" style={{ height:128, objectFit:'contain' }} />
         </div>
       ),
     },
@@ -88,8 +88,8 @@ export default function Cursos() {
       tags: ['PRINCIPIANTE'],
       href: '/cursos/katakana',
       image: (
-        <div style={{ width:153, height:128 }}>
-          <img src={imgKatakana} alt="Katakana" style={{ width:'100%', height:'100%', objectFit:'cover' }} />
+        <div style={{ display:'flex', alignItems:'center', justifyContent:'center', height:128, overflow:'hidden', width:'100%' }}>
+          <img src={imgKatakana} alt="Katakana" style={{ height:128, objectFit:'contain' }} />
         </div>
       ),
     },
