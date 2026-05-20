@@ -121,10 +121,10 @@ const section: React.CSSProperties = { maxWidth:1100, margin:'0 auto', width:'10
               <span style={{ fontFamily:"'Work Sans', sans-serif", fontWeight:400, fontSize:16, color:'black', letterSpacing:'0.64px' }}>Conocé el mundo del japonés.</span>
             </div>
             {/* Contenido */}
-            <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', width:'100%' }}>
+            <div className="hero-home-layout" style={{ display:'flex', alignItems:'center', justifyContent:'space-between', width:'100%' }}>
               {/* Left — texto centrado verticalmente */}
-              <div style={{ display:'flex', alignItems:'stretch', alignSelf:'stretch' }}>
-                <div style={{ width:600, display:'flex', flexDirection:'column', gap:24, justifyContent:'center' }}>
+              <div style={{ display:'flex', alignItems:'stretch', alignSelf:'stretch', minWidth:0, flex:1 }}>
+                <div style={{ width:'100%', maxWidth:600, display:'flex', flexDirection:'column', gap:24, justifyContent:'center' }}>
                   <div style={{ fontFamily:"'Inter', sans-serif", fontWeight:300, fontSize:16, color:'black', lineHeight:'28px' }}>
                     <p>People close to me have noticed that sometimes I go completely still — like I've entered another level.</p>
                     <br /><br />

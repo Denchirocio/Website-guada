@@ -51,7 +51,7 @@ export default function CursoHiragana() {
       <section style={{ maxWidth:1100, margin:'0 auto', width:'100%', padding:'60px 20px', display:'flex', flexDirection:'column', gap:40 }}>
 
         {/* Hero */}
-        <div style={{ display:'flex', alignItems:'flex-start', justifyContent:'space-between', gap:40 }}>
+        <div className="curso-detalle-layout" style={{ display:'flex', alignItems:'flex-start', justifyContent:'space-between', gap:40 }}>
 
           {/* Izquierda */}
           <div style={{ display:'flex', flexDirection:'column', gap:29, maxWidth:600 }}>
