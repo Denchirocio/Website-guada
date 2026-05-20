@@ -1,8 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Work+Sans:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;700&display=swap');
 @import "tailwindcss";
 
-@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Work+Sans:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;700&display=swap');
-
 * { box-sizing: border-box; margin: 0; padding: 0; }
+
+@keyframes drawer-in {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
+@keyframes backdrop-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes scroll-reviews {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
 
 body {
   font-family: 'Inter', sans-serif;
