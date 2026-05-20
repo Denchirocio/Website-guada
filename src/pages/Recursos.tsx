@@ -11,12 +11,12 @@ interface Resource {
 }
 
 const resources: Resource[] = [
-  { title: 'Guía de Hiragana PDF',  description: 'Aprendé el alfabeto básico japonés desde cero con una guía visual simple.' },
-  { title: 'Guía de Katakana PDF',  description: 'Una introducción práctica al katakana, y su sistema de escritura.' },
+  { title: 'Guía de Hiragana PDF',  description: 'Aprendé el alfabeto básico japonés desde cero con una guía visual simple.',  href: '/hiragana-chart.pdf' },
+  { title: 'Guía de Katakana PDF',  description: 'Una introducción práctica al katakana, y su sistema de escritura.',           href: '/katakana-chart.pdf' },
   { title: 'Hojas para trazos',     description: 'Plantillas imprimibles para practicar escritura japonesa a tu ritmo.' },
   { title: 'Hojas para trazos',     description: 'Plantillas imprimibles para practicar escritura japonesa a tu ritmo.' },
-  { title: 'Guía de Hiragana PDF',  description: 'Aprendé el alfabeto básico japonés desde cero con una guía visual simple.' },
-  { title: 'Guía de Katakana PDF',  description: 'Una introducción práctica al katakana, y su sistema de escritura.' },
+  { title: 'Guía de Hiragana PDF',  description: 'Aprendé el alfabeto básico japonés desde cero con una guía visual simple.',  href: '/hiragana-chart.pdf' },
+  { title: 'Guía de Katakana PDF',  description: 'Una introducción práctica al katakana, y su sistema de escritura.',           href: '/katakana-chart.pdf' },
   { title: 'Hojas para trazos',     description: 'Plantillas imprimibles para practicar escritura japonesa a tu ritmo.' },
   { title: 'Hojas para trazos',     description: 'Plantillas imprimibles para practicar escritura japonesa a tu ritmo.' },
 ];
@@ -46,6 +46,7 @@ function ResourceCard({ resource }: { resource: Resource }) {
       {/* CTA */}
       <a
         href={resource.href ?? '#'}
+        download={!!resource.href}
         style={{
           display: 'block', background: 'black', color: 'white', textAlign: 'center',
           fontFamily: "'Work Sans', sans-serif", fontSize: 16, padding: '10px 16px',

@@ -61,10 +61,10 @@ export default function SobreMi() {
 
       {/* ─── Soy Guada ─── */}
       <section style={{ maxWidth:1100, margin:'0 auto', width:'100%', padding:'80px 20px' }}>
-        <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', gap:60 }}>
+        <div className="sobre-mi-layout">
 
           {/* Left — foto con stickers */}
-          <div style={{ flexShrink:0, display:'flex', flexDirection:'column', alignItems:'center', gap:24 }}>
+          <div className="sobre-mi-photo">
             <div style={{ position:'relative', width:340, height:380 }}>
               {/* Foto circular */}
               <div style={{ width:280, height:340, border:'1.5px solid #404040', borderTopLeftRadius:200, borderTopRightRadius:200, overflow:'hidden', margin:'0 auto' }}>

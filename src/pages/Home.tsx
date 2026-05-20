@@ -1,9 +1,10 @@
 ﻿import { useState } from 'react';
+import { Link } from 'react-router';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 /* ── Figma assets ── */
-const imgSakura   = "https://www.figma.com/api/mcp/asset/0ccec46e-b65c-4ed2-aba5-62258de22d3b";
+import imgBannerHome from '../assets/Banner home.png';
 import imgTeacherLocal from '../assets/guada.png';
 const imgTeacher  = imgTeacherLocal;
 const imgHiragana = "https://www.figma.com/api/mcp/asset/ab326742-948f-4552-a1c0-2426f125a3b6";
@@ -150,19 +151,9 @@ const section: React.CSSProperties = { maxWidth:1100, margin:'0 auto', width:'10
 
       <Navbar active="home" onHablemos={openDrawer} />
 
-      {/* ─── Hero sakura ─── */}
-      <div style={{ position:'relative', width:'100%', height:250, overflow:'hidden', borderBottom:'2px solid #d4d4d4' }}>
-        <img src={imgSakura} alt="" style={{ position:'absolute', inset:0, width:'100%', height:'100%', objectFit:'cover', opacity:0.4, transform:'rotate(180deg)' }} />
-        <div style={{ position:'relative', height:'100%', display:'flex', flexDirection:'column', justifyContent:'space-between', padding:'40px 24px' }}>
-          <p style={{ fontFamily:"'Work Sans', sans-serif", fontWeight:400, fontSize:18, color:'black', letterSpacing:0.8 }}>
-            Estudiemos japonés juntos.
-          </p>
-          <div style={{ background:'white', border:'2px solid #959595', padding:'16px 32px', width:'fit-content' }}>
-            <span style={{ fontFamily:"'Noto Sans JP', sans-serif", fontWeight:400, fontSize:28, color:'black' }}>
-              いっしょに日本語を勉強しましょう
-            </span>
-          </div>
-        </div>
+      {/* ─── Hero ─── */}
+      <div style={{ width:'100%', height:250, overflow:'hidden', borderBottom:'2px solid #d4d4d4' }}>
+        <img src={imgBannerHome} alt="" style={{ width:'100%', height:'100%', objectFit:'cover' }} />
       </div>
 
       {/* ─── Te doy la bienvenida ─── */}
@@ -209,9 +200,11 @@ const section: React.CSSProperties = { maxWidth:1100, margin:'0 auto', width:'10
             <CourseCard img={imgKatakana} title="Katakana"       desc="Descripción del curso un poco más larga por favor" tags={["PRINCIPIANTE"]} extra="A" />
             <CourseCard img={imgJLPT}     title="Examen JLPT N5" desc="Descripción del curso un poco más larga por favor" tags={["N5","PRINCIPIANTE"]} />
           </div>
-          <p style={{ fontFamily:"'Work Sans', sans-serif", fontWeight:400, fontSize:18, color:'black', textAlign:'center', cursor:'pointer' }}>
+          <Link to="/cursos" style={{ fontFamily:"'Work Sans', sans-serif", fontWeight:400, fontSize:18, color:'black', textAlign:'center', textDecoration:'none', display:'block' }}
+            onMouseOver={e => (e.currentTarget.style.opacity='0.6')}
+            onMouseOut={e => (e.currentTarget.style.opacity='1')}>
             Ver todos los cursos →
-          </p>
+          </Link>
         </div>
       </section>
 
@@ -224,11 +217,12 @@ const section: React.CSSProperties = { maxWidth:1100, margin:'0 auto', width:'10
               Palabras que resuenan, <strong>desde aquí</strong>
             </p>
           </div>
-          <button style={{ background:'black', color:'white', fontFamily:"'Work Sans', sans-serif", fontWeight:400, fontSize:18, padding:'10px 16px', border:'none', cursor:'pointer', whiteSpace:'nowrap' }}
+          <Link to="/recursos"
+            style={{ background:'black', color:'white', fontFamily:"'Work Sans', sans-serif", fontWeight:400, fontSize:18, padding:'10px 16px', textDecoration:'none', whiteSpace:'nowrap', display:'inline-block' }}
             onMouseOver={e => (e.currentTarget.style.background='#333')}
-            onClick={openDrawer} onMouseOut={e => (e.currentTarget.style.background='black')}>
+            onMouseOut={e => (e.currentTarget.style.background='black')}>
             Vé nuestros recursos gratuitos
-          </button>
+          </Link>
         </div>
       </div>
 
