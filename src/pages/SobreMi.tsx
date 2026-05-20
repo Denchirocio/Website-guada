@@ -65,9 +65,9 @@ export default function SobreMi() {
 
           {/* Left — foto con stickers */}
           <div className="sobre-mi-photo">
-            <div style={{ position:'relative', width:340, height:380 }}>
+            <div style={{ position:'relative', width:'min(340px, 100%)', height:380 }}>
               {/* Foto circular */}
-              <div style={{ width:280, height:340, border:'1.5px solid #404040', borderTopLeftRadius:200, borderTopRightRadius:200, overflow:'hidden', margin:'0 auto' }}>
+              <div style={{ width:'min(280px, 82%)', height:340, border:'1.5px solid #404040', borderTopLeftRadius:200, borderTopRightRadius:200, overflow:'hidden', margin:'0 auto' }}>
                 <img src={imgGuada} alt="Guada Sensei" style={{ width:'100%', height:'100%', objectFit:'cover' }} />
               </div>
               {/* Stickers flotantes */}

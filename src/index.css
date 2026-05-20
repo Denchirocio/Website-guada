@@ -50,5 +50,7 @@ body {
   }
   .sobre-mi-photo {
     flex-shrink: unset;
+    width: 100%;
+    align-items: center;
   }
 }
