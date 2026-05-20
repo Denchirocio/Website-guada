@@ -8,8 +8,8 @@ import ContactDrawer from '../components/ContactDrawer';
 /* ── Figma assets ── */
 import imgBannerHome from '../assets/Banner home.png';
 import imgHero from '../assets/guadahome.png';
-const imgHiragana = "https://www.figma.com/api/mcp/asset/ab326742-948f-4552-a1c0-2426f125a3b6";
-const imgKatakana = "https://www.figma.com/api/mcp/asset/72368156-877f-4b02-a206-40ebedaba643";
+import imgHiragana from '../assets/Curso hiragana.png';
+import imgKatakana from '../assets/Curso katakana.png';
 import imgJLPT from '../assets/N5.png';
 import imgBannerLocal from '../assets/bannerrecursos.png';
 const imgBanner   = imgBannerLocal;

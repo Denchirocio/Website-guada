@@ -6,8 +6,9 @@ import FadeIn from '../components/FadeIn';
 import ContactDrawer from '../components/ContactDrawer';
 
 import imgSakuraBanner from '../assets/Banner sakura 3.png';
-const imgHiragana = "https://www.figma.com/api/mcp/asset/53c5b85d-5e00-40a6-bece-329a72b5d435";
-const imgKatakana = "https://www.figma.com/api/mcp/asset/0dc8a618-8157-43a4-8f5d-6a9fe3c72ea8";
+import imgHiragana from '../assets/Curso hiragana.png';
+import imgKatakana from '../assets/Curso katakana.png';
+import imgParticulares from '../assets/Clases particulares.png';
 import imgJLPT from '../assets/N5.png';
 
 
@@ -98,25 +99,8 @@ export default function Cursos() {
       tags: ['N5 - N3'],
       href: '/cursos/particulares',
       image: (
-        <div style={{ width:'100%', height:128, background:'#f3f3f3', borderRadius:4, position:'relative', display:'flex', flexDirection:'column', justifyContent:'center', gap:10, padding:'12px 16px' }}>
-          {/* Bubble A */}
-          <div style={{ display:'flex', alignItems:'center', gap:8 }}>
-            <div style={{ width:36, height:36, background:'#cbe2ff', border:'1px solid black', borderRadius:6, display:'flex', alignItems:'center', justifyContent:'center', flexShrink:0 }}>
-              <span style={{ fontFamily:"'Krona One', sans-serif", fontSize:18, color:'black' }}>A</span>
-            </div>
-            <div style={{ background:'white', border:'1px solid #d4d4d4', borderRadius:6, padding:'4px 12px', fontFamily:"'Work Sans', sans-serif", fontSize:14, color:'black' }}>
-              Konnichiha!
-            </div>
-          </div>
-          {/* Bubble B */}
-          <div style={{ display:'flex', alignItems:'center', gap:8, alignSelf:'flex-end' }}>
-            <div style={{ background:'white', border:'1px solid #d4d4d4', borderRadius:6, padding:'4px 12px', fontFamily:"'Work Sans', sans-serif", fontSize:14, color:'black' }}>
-              Arigatou!
-            </div>
-            <div style={{ width:36, height:36, background:'#cbe2ff', border:'1px solid black', borderRadius:6, display:'flex', alignItems:'center', justifyContent:'center', flexShrink:0 }}>
-              <span style={{ fontFamily:"'Krona One', sans-serif", fontSize:18, color:'black' }}>B</span>
-            </div>
-          </div>
+        <div style={{ width:'100%', height:128 }}>
+          <img src={imgParticulares} alt="Clases particulares" style={{ width:'100%', height:'100%', objectFit:'cover' }} />
         </div>
       ),
     },
