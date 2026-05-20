@@ -117,9 +117,9 @@ export default function CursoKatakana() {
         <div style={{ display:'flex', justifyContent:'space-between', gap:40 }}>
           <div style={{ display:'flex', flexDirection:'column', gap:20, flex:1 }}>
             <h2 style={{ fontFamily:"'Krona One', sans-serif", fontSize:24, letterSpacing:'4.8px', color:'black', margin:0 }}>INCLUYE</h2>
-            <ul style={{ display:'flex', flexDirection:'column', gap:16, paddingLeft:24, margin:0 }}>
+            <ul style={{ paddingLeft:24, margin:0 }}>
               {incluye.map((item, i) => (
-                <li key={i} style={{ fontFamily:"'Work Sans', sans-serif", fontWeight:400, fontSize:16, color:'black', letterSpacing:'0.64px', lineHeight:'normal' }}>
+                <li key={i} style={{ fontFamily:"'Work Sans', sans-serif", fontWeight:400, fontSize:16, color:'black', letterSpacing:'0.64px', lineHeight:'normal', listStyleType:'disc', marginBottom: i < incluye.length - 1 ? 16 : 0 }}>
                   {item}
                 </li>
               ))}
@@ -127,9 +127,9 @@ export default function CursoKatakana() {
           </div>
           <div style={{ display:'flex', flexDirection:'column', gap:20, flex:1 }}>
             <h2 style={{ fontFamily:"'Krona One', sans-serif", fontSize:24, letterSpacing:'4.8px', color:'black', margin:0 }}>IDEAL PARA</h2>
-            <ul style={{ display:'flex', flexDirection:'column', gap:16, paddingLeft:24, margin:0 }}>
+            <ul style={{ paddingLeft:24, margin:0 }}>
               {idealPara.map((item, i) => (
-                <li key={i} style={{ fontFamily:"'Work Sans', sans-serif", fontWeight:400, fontSize:16, color:'black', letterSpacing:'0.64px', lineHeight:'normal' }}>
+                <li key={i} style={{ fontFamily:"'Work Sans', sans-serif", fontWeight:400, fontSize:16, color:'black', letterSpacing:'0.64px', lineHeight:'normal', listStyleType:'disc', marginBottom: i < idealPara.length - 1 ? 16 : 0 }}>
                   {item}
                 </li>
               ))}

@@ -16,16 +16,20 @@ export default function ContactDrawer({ onClose, cursoDefault }: { onClose: () =
 
   return (
     <>
+      {/* Backdrop */}
       <div onClick={onClose} style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.4)', zIndex: 100, animation: 'backdrop-in 0.3s ease' }} />
-      <div style={{ position: 'fixed', top: 0, right: 0, height: '100%', width: 600, background: 'white', zIndex: 101, display: 'flex', flexDirection: 'column', animation: 'drawer-in 0.35s cubic-bezier(0.32,0.72,0,1)', overflowY: 'auto' }}>
+
+      {/* Drawer */}
+      <div style={{ position: 'fixed', top: 0, right: 0, height: '100%', width: 600, background: 'white', zIndex: 101, display: 'flex', flexDirection: 'column', animation: 'drawer-in 0.35s cubic-bezier(0.32,0.72,0,1)' }}>
 
         {/* Close */}
-        <button onClick={onClose} style={{ position: 'absolute', top: 20, right: 20, background: 'none', border: 'none', fontSize: 22, cursor: 'pointer', color: '#111', zIndex: 1 }}>✕</button>
+        <button onClick={onClose} style={{ position: 'absolute', top: 20, right: 20, background: 'none', border: 'none', fontSize: 22, cursor: 'pointer', color: '#111', zIndex: 2 }}>✕</button>
 
-        <div style={{ padding: '32px 24px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', minHeight: '100%' }}>
+        {/* ── Contenido scrolleable ── */}
+        <div style={{ flex: 1, overflowY: 'auto', padding: '32px 24px 24px' }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
 
-            {/* Banner con imagen y texto */}
+            {/* Banner */}
             <div style={{ position: 'relative', width: '100%', height: 169, overflow: 'hidden' }}>
               <img src={imgBannerForm} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.5 }} />
               <div style={{
@@ -39,17 +43,14 @@ export default function ContactDrawer({ onClose, cursoDefault }: { onClose: () =
               </div>
             </div>
 
-            {/* Nombre */}
             <input placeholder="Nombre & apellido*" value={form.nombre}
               onChange={e => setForm({ ...form, nombre: e.target.value })}
               style={{ ...fieldBase, height: 48 }} />
 
-            {/* Email */}
             <input placeholder="E-mail*" value={form.email}
               onChange={e => setForm({ ...form, email: e.target.value })}
               style={{ ...fieldBase, height: 48 }} />
 
-            {/* Nivel */}
             <div style={{ position: 'relative' }}>
               <select value={form.nivel} onChange={e => setForm({ ...form, nivel: e.target.value })}
                 style={{ ...fieldBase, height: 48, cursor: 'pointer', color: form.nivel ? 'black' : '#aaa' }}>
@@ -59,7 +60,6 @@ export default function ContactDrawer({ onClose, cursoDefault }: { onClose: () =
               <span style={{ position: 'absolute', right: 12, top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none', color: '#aaa' }}>▾</span>
             </div>
 
-            {/* Curso */}
             <div style={{ position: 'relative' }}>
               <select value={form.curso} onChange={e => setForm({ ...form, curso: e.target.value })}
                 style={{ ...fieldBase, height: 48, cursor: 'pointer', color: form.curso ? 'black' : '#aaa' }}>
@@ -69,22 +69,23 @@ export default function ContactDrawer({ onClose, cursoDefault }: { onClose: () =
               <span style={{ position: 'absolute', right: 12, top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none', color: '#aaa' }}>▾</span>
             </div>
 
-            {/* Comentarios */}
             <textarea placeholder="Comentarios" rows={6} value={form.comentarios}
               onChange={e => setForm({ ...form, comentarios: e.target.value })}
               style={{ ...fieldBase, height: 187, resize: 'none' }} />
-          </div>
 
-          {/* Enviar */}
-          <div style={{ display: 'flex', justifyContent: 'flex-end', paddingTop: 24 }}>
-            <button
-              style={{ background: 'black', color: 'white', fontFamily: "'Work Sans', sans-serif", fontWeight: 400, fontSize: 20, padding: '10px 16px', border: 'none', cursor: 'pointer' }}
-              onMouseOver={e => (e.currentTarget.style.background = '#333')}
-              onMouseOut={e => (e.currentTarget.style.background = 'black')}>
-              Enviar
-            </button>
           </div>
         </div>
+
+        {/* ── Botón fijo fuera del scroll ── */}
+        <div style={{ padding: '24px', borderTop: '1px solid #ebebeb', background: 'white', display: 'flex', justifyContent: 'flex-end' }}>
+          <button
+            style={{ background: 'black', color: 'white', fontFamily: "'Work Sans', sans-serif", fontWeight: 400, fontSize: 20, padding: '10px 16px', border: 'none', cursor: 'pointer' }}
+            onMouseOver={e => (e.currentTarget.style.background = '#333')}
+            onMouseOut={e => (e.currentTarget.style.background = 'black')}>
+            Enviar
+          </button>
+        </div>
+
       </div>
     </>
   );
