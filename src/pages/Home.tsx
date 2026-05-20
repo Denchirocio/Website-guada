@@ -5,8 +5,7 @@ import Footer from '../components/Footer';
 
 /* ── Figma assets ── */
 import imgBannerHome from '../assets/Banner home.png';
-import imgTeacherLocal from '../assets/guada.png';
-const imgTeacher  = imgTeacherLocal;
+import imgHero from '../assets/guadahome.png';
 const imgHiragana = "https://www.figma.com/api/mcp/asset/ab326742-948f-4552-a1c0-2426f125a3b6";
 const imgKatakana = "https://www.figma.com/api/mcp/asset/72368156-877f-4b02-a206-40ebedaba643";
 import imgJLPT from '../assets/N5.png';
@@ -192,7 +191,7 @@ const section: React.CSSProperties = { maxWidth:1100, margin:'0 auto', width:'10
       {/* ─── Te doy la bienvenida ─── */}
       <section style={{ padding:'80px 0' }}>
         <div style={section}>
-          <div style={{ display:'flex', flexDirection:'column', gap:40 }}>
+          <div style={{ display:'flex', flexDirection:'column', gap:24 }}>
             {/* Título */}
             <div style={{ display:'flex', alignItems:'center', gap:8 }}>
               <span style={{ fontFamily:"'Krona One', sans-serif", fontSize:24, letterSpacing:'4.8px', color:'black' }}>TE DOY LA BIENVENIDA</span>
@@ -201,28 +200,29 @@ const section: React.CSSProperties = { maxWidth:1100, margin:'0 auto', width:'10
             </div>
             {/* Contenido */}
             <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', width:'100%' }}>
-              {/* Left — texto + botón */}
-              <div style={{ flexShrink:0, width:600, display:'flex', flexDirection:'column', gap:24 }}>
-                <div style={{ height:309, fontFamily:"'Inter', sans-serif", fontWeight:300, fontSize:16, color:'black', lineHeight:'28px', overflow:'hidden' }}>
-                  <p>People close to me have noticed that sometimes I go completely still — like I've entered another level.</p>
-                  <br />
-                  <p>That's usually when I'm designing interfaces in my head, replaying user flows, or thinking about how to make digital experiences feel more human.</p>
-                  <br />
-                  <p>Influenced by anime and video games, I approach design as an experience that should guide, challenge, and reward the user.</p>
-                  <br />
-                  <p>This site is an open portal to that world.</p>
+              {/* Left — texto centrado verticalmente */}
+              <div style={{ display:'flex', alignItems:'stretch', alignSelf:'stretch' }}>
+                <div style={{ width:600, display:'flex', flexDirection:'column', gap:24, justifyContent:'center' }}>
+                  <div style={{ fontFamily:"'Inter', sans-serif", fontWeight:300, fontSize:16, color:'black', lineHeight:'28px' }}>
+                    <p>People close to me have noticed that sometimes I go completely still — like I've entered another level.</p>
+                    <br /><br />
+                    <p>That's usually when I'm designing interfaces in my head, replaying user flows, or thinking about how to make digital experiences feel more human.</p>
+                    <br /><br />
+                    <p>Influenced by anime and video games, I approach design as an experience that should guide, challenge, and reward the user.</p>
+                    <br /><br />
+                    <p>This site is an open portal to that world.</p>
+                  </div>
+                  <button onClick={openDrawer}
+                    style={{ background:'black', color:'white', fontFamily:"'Work Sans', sans-serif", fontWeight:400, fontSize:20, padding:'10px 16px', border:'none', cursor:'pointer', width:'fit-content' }}
+                    onMouseOver={e => (e.currentTarget.style.background='#333')}
+                    onMouseOut={e => (e.currentTarget.style.background='black')}>
+                    Aprendamos juntos!
+                  </button>
                 </div>
-                <button onClick={openDrawer}
-                  style={{ background:'black', color:'white', fontFamily:"'Work Sans', sans-serif", fontWeight:400, fontSize:20, padding:'10px 16px', border:'none', cursor:'pointer', width:'fit-content' }}
-                  onMouseOver={e => (e.currentTarget.style.background='#333')}
-                  onMouseOut={e => (e.currentTarget.style.background='black')}>
-                  Aprendamos juntos!
-                </button>
               </div>
-              {/* Right — arco (borde) + foto superpuesta */}
-              <div style={{ position:'relative', width:363, height:500, flexShrink:0 }}>
-                <div style={{ position:'absolute', top:0, left:0, right:0, height:428, border:'1px solid #404040', borderTopLeftRadius:200, borderTopRightRadius:200, zIndex:2, pointerEvents:'none' }} />
-                <img src={imgTeacher} alt="Guada Sensei" style={{ position:'absolute', top:0, left:'50%', transform:'translateX(-50%)', height:'100%', width:'auto', objectFit:'cover', objectPosition:'top center', zIndex:1 }} />
+              {/* Right — foto con arco ya en la imagen */}
+              <div style={{ flexShrink:0 }}>
+                <img src={imgHero} alt="Guada" style={{ height:470, width:'auto', display:'block' }} />
               </div>
             </div>
           </div>
