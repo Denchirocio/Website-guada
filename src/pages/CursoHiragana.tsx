@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ContactDrawer from '../components/ContactDrawer';
 import imgBanner from '../assets/banner cursos.png';
-import imgCurso from '../assets/Detalle hiragana.png';
+import imgCurso from '../assets/detalle hiragana.jpg';
 const imgAvatar1 = "https://www.figma.com/api/mcp/asset/61b2e8d4-4cb8-4ae0-8a22-9460b39f9258";
 const imgAvatar2 = "https://www.figma.com/api/mcp/asset/a8fe66a0-f6a4-4ff2-8c39-e4d8e14f5e82";
 const imgAvatar3 = "https://www.figma.com/api/mcp/asset/3caf827b-d788-4e85-b950-8557e69d34e7";
