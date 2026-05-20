@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import FadeIn from '../components/FadeIn';
 
 import imgSakuraBanner from '../assets/Banner sakura 3.png';
 const imgHiragana = "https://www.figma.com/api/mcp/asset/53c5b85d-5e00-40a6-bece-329a72b5d435";
@@ -187,6 +188,7 @@ export default function Cursos() {
       </div>
 
       {/* ─── Cursos ─── */}
+      <FadeIn>
       <section style={{ maxWidth:1100, margin:'0 auto', width:'100%', padding:'80px 20px' }}>
         {/* Section title */}
         <div style={{ display:'flex', alignItems:'center', gap:8, marginBottom:29 }}>
@@ -202,6 +204,7 @@ export default function Cursos() {
           ))}
         </div>
       </section>
+      </FadeIn>
 
       <Footer />
     </div>

@@ -2,6 +2,7 @@
 import { Link } from 'react-router';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import FadeIn from '../components/FadeIn';
 
 /* ── Figma assets ── */
 import imgBannerHome from '../assets/Banner home.png';
@@ -189,6 +190,7 @@ const section: React.CSSProperties = { maxWidth:1100, margin:'0 auto', width:'10
       </div>
 
       {/* ─── Te doy la bienvenida ─── */}
+      <FadeIn>
       <section style={{ padding:'80px 0' }}>
         <div style={section}>
           <div style={{ display:'flex', flexDirection:'column', gap:24 }}>
@@ -228,51 +230,57 @@ const section: React.CSSProperties = { maxWidth:1100, margin:'0 auto', width:'10
           </div>
         </div>
       </section>
+      </FadeIn>
 
       {/* ─── Cursos ─── */}
-      <section style={{ background:'#fafafa', padding:'60px 0' }}>
-        <div style={{ ...section, display:'flex', flexDirection:'column', gap:40 }}>
-          <div style={{ display:'flex', alignItems:'center', gap:8 }}>
-            <span style={{ fontFamily:"'Krona One', sans-serif", fontSize:18, letterSpacing:3, color:'black' }}>CURSOS</span>
-            <span style={{ color:'#aaa', margin:'0 4px' }}>|</span>
-            <span style={{ fontFamily:"'Inter', sans-serif", fontWeight:400, fontSize:15, color:'black' }}>aprende japonés.</span>
+      <FadeIn>
+        <section style={{ background:'#fafafa', padding:'60px 0' }}>
+          <div style={{ ...section, display:'flex', flexDirection:'column', gap:40 }}>
+            <div style={{ display:'flex', alignItems:'center', gap:8 }}>
+              <span style={{ fontFamily:"'Krona One', sans-serif", fontSize:18, letterSpacing:3, color:'black' }}>CURSOS</span>
+              <span style={{ color:'#aaa', margin:'0 4px' }}>|</span>
+              <span style={{ fontFamily:"'Inter', sans-serif", fontWeight:400, fontSize:15, color:'black' }}>aprende japonés.</span>
+            </div>
+            <div style={{ display:'flex', gap:37, alignItems:'flex-start', justifyContent:'center', flexWrap:'wrap' }}>
+              <CourseCard img={imgHiragana} title="Hiragana"       desc="Descripción del curso un poco más larga por favor" tags={["PRINCIPIANTE"]} href="/cursos/hiragana" />
+              <CourseCard img={imgKatakana} title="Katakana"       desc="Descripción del curso un poco más larga por favor" tags={["PRINCIPIANTE"]} />
+              <CourseCard img={imgJLPT}     title="Examen JLPT N5" desc="Descripción del curso un poco más larga por favor" tags={["N5","PRINCIPIANTE"]} />
+            </div>
+            <Link to="/cursos" style={{ fontFamily:"'Work Sans', sans-serif", fontWeight:400, fontSize:18, color:'black', textAlign:'center', textDecoration:'none', display:'block' }}
+              onMouseOver={e => (e.currentTarget.style.opacity='0.6')}
+              onMouseOut={e => (e.currentTarget.style.opacity='1')}>
+              Ver todos los cursos →
+            </Link>
           </div>
-          <div style={{ display:'flex', gap:37, alignItems:'flex-start', justifyContent:'center', flexWrap:'wrap' }}>
-            <CourseCard img={imgHiragana} title="Hiragana"       desc="Descripción del curso un poco más larga por favor" tags={["PRINCIPIANTE"]} href="/cursos/hiragana" />
-            <CourseCard img={imgKatakana} title="Katakana"       desc="Descripción del curso un poco más larga por favor" tags={["PRINCIPIANTE"]} />
-            <CourseCard img={imgJLPT}     title="Examen JLPT N5" desc="Descripción del curso un poco más larga por favor" tags={["N5","PRINCIPIANTE"]} />
-          </div>
-          <Link to="/cursos" style={{ fontFamily:"'Work Sans', sans-serif", fontWeight:400, fontSize:18, color:'black', textAlign:'center', textDecoration:'none', display:'block' }}
-            onMouseOver={e => (e.currentTarget.style.opacity='0.6')}
-            onMouseOut={e => (e.currentTarget.style.opacity='1')}>
-            Ver todos los cursos →
-          </Link>
-        </div>
-      </section>
+        </section>
+      </FadeIn>
 
       {/* ─── Banner recursos ─── */}
-      <div style={{ position:'relative', width:'100%', height:179, borderTop:'2px solid #b2b2b2', borderBottom:'2px solid #b2b2b2', overflow:'hidden' }}>
-        <img src={imgBanner} alt="" style={{ position:'absolute', inset:0, width:'100%', height:'100%', objectFit:'cover', opacity:0.7 }} loading="lazy" />
-        <div style={{ position:'relative', height:'100%', display:'flex', alignItems:'center', justifyContent:'space-between', padding:'0 40px' }}>
-          <div style={{ background:'white', border:'2px solid black', padding:'20px 32px' }}>
-            <p style={{ fontFamily:"'Work Sans', sans-serif", fontWeight:400, fontSize:28, color:'black', whiteSpace:'nowrap' }}>
-              Palabras que resuenan, <strong>desde aquí</strong>
-            </p>
+      <FadeIn>
+        <div style={{ position:'relative', width:'100%', height:179, borderTop:'2px solid #b2b2b2', borderBottom:'2px solid #b2b2b2', overflow:'hidden' }}>
+          <img src={imgBanner} alt="" style={{ position:'absolute', inset:0, width:'100%', height:'100%', objectFit:'cover', opacity:0.7 }} loading="lazy" />
+          <div style={{ position:'relative', height:'100%', display:'flex', alignItems:'center', justifyContent:'space-between', padding:'0 40px' }}>
+            <div style={{ background:'white', border:'2px solid black', padding:'20px 32px' }}>
+              <p style={{ fontFamily:"'Work Sans', sans-serif", fontWeight:400, fontSize:28, color:'black', whiteSpace:'nowrap' }}>
+                Palabras que resuenan, <strong>desde aquí</strong>
+              </p>
+            </div>
+            <Link to="/recursos"
+              style={{ background:'black', color:'white', fontFamily:"'Work Sans', sans-serif", fontWeight:400, fontSize:18, padding:'10px 16px', textDecoration:'none', whiteSpace:'nowrap', display:'inline-block' }}
+              onMouseOver={e => (e.currentTarget.style.background='#333')}
+              onMouseOut={e => (e.currentTarget.style.background='black')}>
+              Vé nuestros recursos gratuitos
+            </Link>
           </div>
-          <Link to="/recursos"
-            style={{ background:'black', color:'white', fontFamily:"'Work Sans', sans-serif", fontWeight:400, fontSize:18, padding:'10px 16px', textDecoration:'none', whiteSpace:'nowrap', display:'inline-block' }}
-            onMouseOver={e => (e.currentTarget.style.background='#333')}
-            onMouseOut={e => (e.currentTarget.style.background='black')}>
-            Vé nuestros recursos gratuitos
-          </Link>
         </div>
-      </div>
+      </FadeIn>
 
       {/* ─── Experiencias ─── */}
-      <section style={{ padding:'60px 0', display:'flex', flexDirection:'column', gap:40 }}>
-        <p style={{ fontFamily:"'Krona One', sans-serif", fontSize:20, letterSpacing:4, color:'black', textAlign:'center' }}>
-          EXPERIENCIAS
-        </p>
+      <FadeIn>
+        <section style={{ padding:'60px 0', display:'flex', flexDirection:'column', gap:40 }}>
+          <p style={{ fontFamily:"'Krona One', sans-serif", fontSize:20, letterSpacing:4, color:'black', textAlign:'center' }}>
+            EXPERIENCIAS
+          </p>
         {/* Carrusel infinito — duplicamos las cards para el loop */}
         <div style={{ overflow:'hidden', width:'100%' }}>
           <div style={{
@@ -295,7 +303,8 @@ const section: React.CSSProperties = { maxWidth:1100, margin:'0 auto', width:'10
             <ReviewCard img={imgRev4} name="Franco"  role="Clases particulares"          stars={4} quote="Empecé japonés sin saber absolutamente nada y hoy puedo leer hiragana, entender frases básicas y hasta animarme a hablar un poco. Las clases siempre se sienten tranquilas y súper humanas." />
           </div>
         </div>
-      </section>
+        </section>
+      </FadeIn>
 
       <Footer />
 

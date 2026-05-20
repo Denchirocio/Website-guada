@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import FadeIn from '../components/FadeIn';
 import imgGuada from '../assets/guada sensei.png';
 import imgBanner from '../assets/banner4.png';
 
@@ -68,6 +69,7 @@ export default function SobreMi() {
       </div>
 
       {/* ─── Soy Guada ─── */}
+      <FadeIn>
       <section style={{ maxWidth:1100, margin:'0 auto', width:'100%', padding:'80px 20px' }}>
         <div className="sobre-mi-layout">
 
@@ -96,6 +98,7 @@ export default function SobreMi() {
           </div>
         </div>
       </section>
+      </FadeIn>
 
       <Footer />
     </div>

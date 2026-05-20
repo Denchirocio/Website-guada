@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import FadeIn from '../components/FadeIn';
 
 import imgBanner from '../assets/bannerrrhh.png';
 
@@ -122,6 +123,7 @@ export default function Recursos() {
       </div>
 
       {/* ─── Recursos ─── */}
+      <FadeIn>
       <section style={{ maxWidth: 1100, margin: '0 auto', width: '100%', padding: '80px 20px' }}>
         {/* Section title */}
         <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 29 }}>
@@ -141,6 +143,7 @@ export default function Recursos() {
           ))}
         </div>
       </section>
+      </FadeIn>
 
       <Footer />
     </div>
